@@ -81,9 +81,7 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     //end
 //    retrofit imports
-    val retrofitVersion= "3.0.0"
-    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
-    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+
 //    end
 //    coil install
     implementation("io.coil-kt.coil3:coil-compose:3.2.0")

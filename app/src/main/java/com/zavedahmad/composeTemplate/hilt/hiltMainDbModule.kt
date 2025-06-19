@@ -1,10 +1,9 @@
 package com.zavedahmad.composeTemplate.hilt
 
-import android.content.Context
-import androidx.room.Room
-import com.zavedahmad.composeTemplate.roomDatabase.FavouritesDao
 //import com.zavedahmad.composeTemplate.roomDatabase.FavouritesDao
 
+import android.content.Context
+import androidx.room.Room
 import com.zavedahmad.composeTemplate.roomDatabase.MainDatabase
 import com.zavedahmad.composeTemplate.roomDatabase.PreferencesDao
 import dagger.Module
@@ -28,8 +27,5 @@ object HiltMainDbModule {
     fun providePreferencesDao(database: MainDatabase): PreferencesDao{
         return database.preferencesDao()
     }
-    @Provides
-    fun provideFavouritesDao(database: MainDatabase): FavouritesDao{
-        return database.favouritesDao()
-    }
+
 }

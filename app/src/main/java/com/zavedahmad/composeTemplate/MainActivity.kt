@@ -24,8 +24,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSavedStateNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import androidx.navigation3.ui.rememberSceneSetupNavEntryDecorator
-import com.zavedahmad.composeTemplate.ui.favouritesScreen.FaScViewModel
-import com.zavedahmad.composeTemplate.ui.favouritesScreen.FavouritesScreen
+
 import com.zavedahmad.composeTemplate.ui.mainPage.MainPage
 import com.zavedahmad.composeTemplate.ui.mainPage.MainPageViewModel
 
@@ -63,7 +62,7 @@ class RecipePickerActivity : ComponentActivity() {
         setEdgeToEdgeConfig()
         setContent {
             val backStack = rememberNavBackStack<Screen>(Screen.MainPageRoute)
-            val viewModelFavouritesPage = hiltViewModel<FaScViewModel>()
+
             val viewModelMainPage = hiltViewModel<MainPageViewModel>()
 
             val isTopMainPageRoute =
@@ -132,19 +131,7 @@ class RecipePickerActivity : ComponentActivity() {
                                             }
                                         }
 
-                                        is Screen.FavouritePageRoute -> {
-                                            NavEntry(key = key) {
-                                                Box(
-                                                    modifier = Modifier.fillMaxSize(),
-                                                    contentAlignment = Alignment.Center
-                                                ) {
-                                                    FavouritesScreen(
-                                                        backStack,
-                                                        viewModelFavouritesPage
-                                                    )
-                                                }
-                                            }
-                                        }
+
 
 
                                         else -> throw RuntimeException("Invalid NavKey.")
